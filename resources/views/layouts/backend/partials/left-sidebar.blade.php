@@ -9,7 +9,7 @@
                             class="zmdi zmdi-view-dashboard"></i><span> Dashboard </span> </a>
                 </li>
                 <li class="has_sub">
-                    <a href="{{ route('admin.contact.index') }}" class="waves-effect"><i
+                    <a href="{{ route('admin.slider.index') }}" class="waves-effect"><i
                             class="fa fa-address-book"></i><span> Sliders </span> </a>
                 </li>
                 <li class="has_sub">

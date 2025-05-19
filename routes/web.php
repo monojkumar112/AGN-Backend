@@ -38,6 +38,8 @@ Route::get('/achia-nila', [WebController::class, 'achiaNila'])->name('achiaNila'
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend', 'middleware' => ['auth', 'admin']], function () {
     // Admin Dashboard and profile settings route
     Route::get('dashboard', 'AdminDashboardController@dashboard')->name('dashboard');
+    Route::resource('slider', 'SliderController');
+
     Route::get('account-setting', 'AccountSettingController@accountSetting')->name('account.setting');
     Route::put('account-update', 'AccountSettingController@accountUpdate')->name('account.update');
     Route::put('password-update', 'AccountSettingController@passwordUpdate')->name('password.update');
