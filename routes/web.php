@@ -39,6 +39,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend', '
     // Admin Dashboard and profile settings route
     Route::get('dashboard', 'AdminDashboardController@dashboard')->name('dashboard');
     Route::resource('slider', 'SliderController');
+    Route::resource('company', 'CompanyLogoController');
 
     Route::get('account-setting', 'AccountSettingController@accountSetting')->name('account.setting');
     Route::put('account-update', 'AccountSettingController@accountUpdate')->name('account.update');

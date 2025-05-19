@@ -13,6 +13,10 @@
                             class="fa fa-address-book"></i><span> Sliders </span> </a>
                 </li>
                 <li class="has_sub">
+                    <a href="{{ route('admin.company.index') }}" class="waves-effect"><i
+                            class="fa fa-address-book"></i><span> Company Logo </span> </a>
+                </li>
+                <li class="has_sub">
                     <a href="{{ route('admin.contact.index') }}" class="waves-effect"><i
                             class="fa fa-address-book"></i><span> Contact Us </span> </a>
                 </li>
