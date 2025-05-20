@@ -17,6 +17,22 @@
                             class="fa fa-address-book"></i><span> Company Logo </span> </a>
                 </li>
                 <li class="has_sub">
+                    <a href="{{ route('admin.service.index') }}" class="waves-effect"><i
+                            class="fa fa-address-book"></i><span>Service </span> </a>
+                </li>
+                <li class="has_sub">
+                    <a href="{{ route('admin.advisory.index') }}" class="waves-effect"><i
+                            class="fa fa-address-book"></i><span>Advisory Team</span> </a>
+                </li>
+                <li class="has_sub">
+                    <a href="{{ route('admin.technology.index') }}" class="waves-effect"><i
+                            class="fa fa-address-book"></i><span>Technology Team</span> </a>
+                </li>
+                <li class="has_sub">
+                    <a href="{{ route('admin.event.index') }}" class="waves-effect"><i
+                            class="fa fa-address-book"></i><span>Event Team</span> </a>
+                </li>
+                <li class="has_sub">
                     <a href="{{ route('admin.contact.index') }}" class="waves-effect"><i
                             class="fa fa-address-book"></i><span> Contact Us </span> </a>
                 </li>

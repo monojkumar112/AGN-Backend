@@ -40,6 +40,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend', '
     Route::get('dashboard', 'AdminDashboardController@dashboard')->name('dashboard');
     Route::resource('slider', 'SliderController');
     Route::resource('company', 'CompanyLogoController');
+    Route::resource('service', 'ServiceController');
+    Route::resource('advisory', 'AdvisoryTeamController');
+    Route::resource('technology', 'TechnologyTeamController');
+    Route::resource('event', 'EventTeamController');
 
     Route::get('account-setting', 'AccountSettingController@accountSetting')->name('account.setting');
     Route::put('account-update', 'AccountSettingController@accountUpdate')->name('account.update');
