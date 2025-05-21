@@ -108,7 +108,7 @@
                         <!-- <p>/ who we are /</p> -->
                         <h2>
                             <!-- Aligned Global Network is a leading global business strategy
-                                                  consultancy -->
+                                                              consultancy -->
                             Facing tough challenges? <br />
                             Get expert advisors and problem solvers by your side.
                         </h2>
@@ -165,29 +165,29 @@
                                     </div>
                                 </div>
                                 <!-- <div class="col-lg-6 col-md-6">
-                                                      <div class="who-are-item">
-                                                        <h4>Leadership Trainning</h4>
-                                                        <p>
-                                                          Get highlighted by the company that you’ve been worked.
-                                                        </p>
-                                                      </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6">
-                                                      <div class="who-are-item">
-                                                        <h4>Fast On Demand Service</h4>
-                                                        <p>
-                                                          Get highlighted by the company that you’ve been worked.
-                                                        </p>
-                                                      </div>
-                                                    </div> -->
+                                                                  <div class="who-are-item">
+                                                                    <h4>Leadership Trainning</h4>
+                                                                    <p>
+                                                                      Get highlighted by the company that you’ve been worked.
+                                                                    </p>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6">
+                                                                  <div class="who-are-item">
+                                                                    <h4>Fast On Demand Service</h4>
+                                                                    <p>
+                                                                      Get highlighted by the company that you’ve been worked.
+                                                                    </p>
+                                                                  </div>
+                                                                </div> -->
                             </div>
                         </div>
                         <!-- <a href="#" class="custom-btn get-qucte-btn">
-                                                  <div class="get-arrow-icon">
-                                                    <i class="fas fa-arrow-up"></i>
-                                                  </div>
-                                                  <p>Get A Quote</p>
-                                                </a> -->
+                                                              <div class="get-arrow-icon">
+                                                                <i class="fas fa-arrow-up"></i>
+                                                              </div>
+                                                              <p>Get A Quote</p>
+                                                            </a> -->
                     </div>
                 </div>
             </div>
@@ -265,35 +265,35 @@
     </section>
     <!-- ============= Count Down Section ============= -->
     <!-- <section class="count-down">
-                                        <div class="container">
-                                          <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-6">
-                                              <div class="count-down-item">
-                                                <h2 class="count" data-target="834.0M">0.0M</h2>
-                                                <p>Years of Experience</p>
-                                              </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-6">
-                                              <div class="count-down-item">
-                                                <h2 class="count" data-target="732.0M">0.0M</h2>
-                                                <p>Constituents Served</p>
-                                              </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-6">
-                                              <div class="count-down-item">
-                                                <h2 class="count" data-target="90.0M">0.0M</h2>
-                                                <p>Project $ Saved</p>
-                                              </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-6">
-                                              <div class="count-down-item">
-                                                <h2 class="count" data-target="236.0M">0.0M</h2>
-                                                <p>Project Complete</p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </section> -->
+                                                    <div class="container">
+                                                      <div class="row">
+                                                        <div class="col-lg-3 col-md-3 col-6">
+                                                          <div class="count-down-item">
+                                                            <h2 class="count" data-target="834.0M">0.0M</h2>
+                                                            <p>Years of Experience</p>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-6">
+                                                          <div class="count-down-item">
+                                                            <h2 class="count" data-target="732.0M">0.0M</h2>
+                                                            <p>Constituents Served</p>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-6">
+                                                          <div class="count-down-item">
+                                                            <h2 class="count" data-target="90.0M">0.0M</h2>
+                                                            <p>Project $ Saved</p>
+                                                          </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-6">
+                                                          <div class="count-down-item">
+                                                            <h2 class="count" data-target="236.0M">0.0M</h2>
+                                                            <p>Project Complete</p>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </section> -->
 
     <!-- ============= Count Down Section End ============= -->
 
@@ -412,10 +412,10 @@
                             </div>
                         </div>
                         <!-- <div class="col-md-3">
-                                                  <div class="our-service-item">
-                                                    <p>We have the ability to execute globally.</p>
-                                                  </div>
-                                                </div> -->
+                                                              <div class="our-service-item">
+                                                                <p>We have the ability to execute globally.</p>
+                                                              </div>
+                                                            </div> -->
                     </div>
                     <h5 class="text-center service-text">We rise by lifting others.</h5>
                 </div>
@@ -437,12 +437,14 @@
                             deliver solutions.
                         </p>
                         <div class="request-call-form">
-                            <form action="">
+                            <form action="{{ route('contact.store') }}" method="post">
+                                @csrf
+                                @method('post')
                                 <div class="input-fuild-item">
                                     <input type="text" placeholder="Name*" name="name" required />
                                 </div>
                                 <div class="input-fuild-item">
-                                    <input type="text" placeholder="Company Name" name="name" />
+                                    <input type="text" placeholder="Company Name" name="company" />
                                 </div>
                                 <div class="input-fuild-item">
                                     <input type="email" placeholder="Email*" name="email" />
@@ -455,12 +457,13 @@
                                     <textarea name="message" placeholder="Message*" id="" cols="30" rows=""></textarea>
                                 </div>
 
-                                <a class="custom-btn get-qucte-btn" href="mailto:amandah@alignedglobalnetwork.com">
+                                <button type="submit" class="custom-btn get-qucte-btn"
+                                    href="mailto:amandah@alignedglobalnetwork.com">
                                     <div class="get-arrow-icon">
                                         <i class="fas fa-arrow-up"></i>
                                     </div>
                                     <p>Submit Request</p>
-                                </a>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -475,40 +478,6 @@
             </div>
         </div>
     </section>
-
-
-
-    <!-- Lets Talk Modal -->
-    <div class="modal fade" id="subscriber" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Subscribe</h5>
-                    <button type="button" class="btn btn-default close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <form method="POST" action="">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="form-group pt-2">
-                            <label for="from-email" class="pb-1">Email</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                value="{{ old('email') }}" id="from-email" placeholder="example@gmail.com"
-                                name="email">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-info btn-sm text-light">Submit</button>
-                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Lets Talk Modal -->
 
 @endsection
 

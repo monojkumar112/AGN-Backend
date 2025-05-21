@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->string('name');
             $table->json('service');
             $table->string('image');
-            $table->string('btn');
-
+            $table->string('btn_text');
+            $table->string('btn_slug');
             $table->string('status')->default(true);
             $table->timestamps();
         });

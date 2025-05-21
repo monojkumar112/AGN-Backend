@@ -3,14 +3,6 @@
 use App\Http\Controllers\Frontend\WebController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\ProductController as FrontendProductController;
-use App\Http\Controllers\Admin\ProductController as AdminProductController;
-use App\Http\Controllers\Backend\AdminDashboardController;
-use App\Http\Controllers\Backend\CategoryController;
-use App\Http\Controllers\Backend\BlogController;
-use App\Http\Controllers\Backend\CourseController;
-use App\Http\Controllers\Backend\SpeakingController;
-use App\Http\Controllers\Backend\SpeakingWatchController;
 use App\Http\Controllers\BackupController;
 
 /*
@@ -33,7 +25,7 @@ Route::get('/advisor', [WebController::class, 'advisor'])->name('advisor');
 Route::get('/about', [WebController::class, 'about'])->name('about');
 Route::get('/donate', [WebController::class, 'donate'])->name('donate');
 Route::get('/achia-nila', [WebController::class, 'achiaNila'])->name('achiaNila');
-
+Route::post('/contact/store', [WebController::class, 'contactStore'])->name('contact.store');
 //Backend Routes
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend', 'middleware' => ['auth', 'admin']], function () {
     // Admin Dashboard and profile settings route
@@ -44,28 +36,14 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Backend', '
     Route::resource('advisory', 'AdvisoryTeamController');
     Route::resource('technology', 'TechnologyTeamController');
     Route::resource('event', 'EventTeamController');
+    Route::resource('leadership', 'LeadershipTeamController');
 
     Route::get('account-setting', 'AccountSettingController@accountSetting')->name('account.setting');
     Route::put('account-update', 'AccountSettingController@accountUpdate')->name('account.update');
     Route::put('password-update', 'AccountSettingController@passwordUpdate')->name('password.update');
     // Contact-Us Lists
     Route::resource('contact', 'ContactUsController');
-    Route::resource('subscribers', 'SubscribersController');
-    Route::resource('lets-talk', 'LetsTalkController');
-    Route::get('/products', [AdminProductController::class, 'index'])->name('products.index');
-    Route::get('/products/create', [AdminProductController::class, 'create'])->name('products.create');
-    Route::post('/products', [AdminProductController::class, 'store'])->name('products.store');
-    Route::get('/products/{product}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
-    Route::put('/products/{product}', [AdminProductController::class, 'update'])->name('products.update');
-    Route::delete('/products/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
-    Route::resource('/category', 'CategoryController');
-    Route::resource('/blog', 'BlogController');
-    Route::resource('/course', 'CourseController');
-    Route::post('/popular-between', [AdminDashboardController::class, 'popular_between'])->name('popular.between');
 
-    // speaking
-    Route::get('/speaking', SpeakingController::class)->name('speaking');
-    Route::resource('/speaking-watch', 'SpeakingWatchController');
 });
 //User Or Author Routes
 Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 'middleware' => ['auth', 'author']], function () {

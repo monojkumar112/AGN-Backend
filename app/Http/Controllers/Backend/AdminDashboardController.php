@@ -18,30 +18,25 @@ class AdminDashboardController extends Controller
     {
         $data = [];
         $data['contact'] = ContactUs::count();
-        $data['subscribers'] = Subscriber::count();
-        $data['lets_talk'] = LetsTalk::count();
-        $data['total_blogs'] = Blog::count();
-        $data['courses'] = Course::count();
-        $data['popular_weekends'] = Blog::popularThisWeek()->get();
-        $data['popular_this_month'] = Blog::popularThisMonth()->get();
+
 
         return view('backend.dashboard', $data);
     }
-    public function popular_between(Request $request)
-    {
-        $request->validate([
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-        ]);
-        $start_date = Carbon::parse($request->start_date);
-        $end_date = Carbon::parse($request->end_date);
-        $popular_between = Blog::popularBetween($start_date, $end_date)->get();
+    // public function popular_between(Request $request)
+    // {
+    //     $request->validate([
+    //         'start_date' => 'required|date',
+    //         'end_date' => 'required|date|after_or_equal:start_date',
+    //     ]);
+    //     $start_date = Carbon::parse($request->start_date);
+    //     $end_date = Carbon::parse($request->end_date);
+    //     $popular_between = Blog::popularBetween($start_date, $end_date)->get();
 
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Data retrieved successfully',
-            'data' => $popular_between,
-        ]);
-    }
+    //     return response()->json([
+    //         'success' => true,
+    //         'message' => 'Data retrieved successfully',
+    //         'data' => $popular_between,
+    //     ]);
+    // }
 }

@@ -29,7 +29,7 @@
             {{-- popular section --}}
             <div class="mb-4 row">
                 {{-- <h2 class="mb-4">✨📚Trending Blogs You Can't Miss! 🔥</h2> --}}
-                <div class="col-xl-4 d-flex gap-4 col-md-6 ">
+                {{-- <div class="col-xl-4 d-flex gap-4 col-md-6 ">
                     <button type="button" class="btn btn-primary position-relative" data-bs-toggle="modal"
                         data-bs-target="#popularInWeekend">
                         Popular This week
@@ -45,9 +45,9 @@
                             class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-info">+{{ $popular_this_month->count() ?? '' }}
                         </span>
                     </button>
-                </div>
+                </div> --}}
                 {{-- input date picker  --}}
-                <div class="col-8 mt-2 mt-md-2 mt-xl-0 col-xl-8" style="height: 36px;">
+                {{-- <div class="col-8 mt-2 mt-md-2 mt-xl-0 col-xl-8" style="height: 36px;">
                     <form id="dataForm" action="{{ route('admin.popular.between') }}" method="POST"
                         class="d-flex gap-2 h-100">
                         @csrf
@@ -67,7 +67,7 @@
 
 
 
-                </div>
+                </div> --}}
 
             </div>
 
@@ -79,7 +79,7 @@
                         <h2 class="m-b-20" data-plugin="counterup">{{ $contact }}</h2>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-3">
+                {{-- <div class="col-md-6 col-xl-3">
                     <div class="card-box tilebox-one">
                         <i class="zmdi zmdi-email float-right text-muted"></i>
                         <h6 class="text-muted text-uppercase m-b-20">Subscribers</h6>
@@ -106,7 +106,7 @@
                         <h6 class="text-muted text-uppercase m-b-20">Total Course</h6>
                         <h2 class="m-b-20" data-plugin="counterup">{{ $courses ?? '00' }}</h2>
                     </div>
-                </div>
+                </div> --}}
 
             </div><!-- end row -->
         </div> <!-- container -->
@@ -121,7 +121,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
+                        {{-- 
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box table-responsive">
@@ -174,7 +174,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="modal-footer">
@@ -194,12 +194,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
+                        {{-- 
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box table-responsive">
-                                    <table id="responsive-month-datatable"
-                                        class="table dt-responsive nowrap table-striped" cellspacing="0" width="100%">
+                                    <table id="responsive-month-datatable" class="table dt-responsive nowrap table-striped"
+                                        cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                                 <th>#SL</th>
@@ -247,7 +247,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="modal-footer">
@@ -337,7 +337,7 @@
     </script>
 
     {{-- popular between form submit  --}}
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#dataForm').on('submit', function(e) {
                 e.preventDefault(); // Prevent default form behavior
@@ -449,5 +449,5 @@
                 $('#delete-form-' + id).submit();
             }
         }
-    </script>
+    </script> --}}
 @endpush

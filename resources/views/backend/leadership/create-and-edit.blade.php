@@ -89,14 +89,14 @@
                                                 @enderror
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <fieldset class="form-group">
                                                 <label for="short_description">Short Description <span
                                                         class="text-danger"><b>*</b></span>
                                                 </label>
-                                                <textarea name="" class="form-control @error('short_description') is-invalid @enderror"
-                                                    value="{{ $leadership->short_description ?? old('short_description') }}" id="short_description"
-                                                    name="short_description" required id="" cols="30" rows="4"></textarea>
+                                                <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description"
+                                                    name="short_description" required cols="30" rows="4">{{ $leadership->short_description ?? old('short_description') }}</textarea>
+
                                                 @error('short_description')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -106,7 +106,7 @@
                                         </div>
 
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="image" class="form-label">Upload leadership Image </label>
                                                 <input id="image" class="dropify" name="image" type="file">

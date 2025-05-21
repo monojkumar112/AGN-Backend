@@ -31,12 +31,12 @@ class LeadershipTeamController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
             'short_description' => 'required',
             'image' => 'required|image',
-            'logo' => 'required|image',
         ]);
 
         $imagePath = null;

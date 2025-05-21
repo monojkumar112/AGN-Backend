@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class LeadershipTeam extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'designation',
+        'short_description',
+        'image',
+        'status',
+    ];
 }
