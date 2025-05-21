@@ -53,6 +53,7 @@
                                 <tr>
                                     <th>#SL</th>
                                     <th>Name</th>
+                                    <th>Company Name</th>
                                     <th>Designation</th>
                                     <th>Image</th>
                                     <th>Status</th>
@@ -66,6 +67,7 @@
 
                                         <td>{{ Str::words($leadership->name, 20, '[..]') }}</td>
                                         <td>{{ Str::words($leadership->designation, 30, '[..]') }}</td>
+                                        <td>{{ Str::words($leadership->short_description, 30, '[..]') }}</td>
                                         <td>
                                             <img src="{{ $leadership->logo != null ? asset($leadership->logo) : asset('assets/application-default/img/gallery.jpg') }}"
                                                 alt="" style="width: 80px;">

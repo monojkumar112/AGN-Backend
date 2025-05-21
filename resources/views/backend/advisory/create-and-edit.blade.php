@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <fieldset class="form-group">
-                                                <label for="name">Title <span class="text-danger"><b>*</b></span>
+                                                <label for="name">Name <span class="text-danger"><b>*</b></span>
                                                 </label>
                                                 <input type="text"
                                                     class="form-control @error('name') is-invalid @enderror"

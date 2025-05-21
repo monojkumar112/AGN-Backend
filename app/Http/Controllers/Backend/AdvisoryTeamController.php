@@ -9,9 +9,8 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 class AdvisoryTeamController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+
     public function index()
     {
         $advisorys = AdvisoryTeam::latest()->get();
@@ -34,53 +33,36 @@ class AdvisoryTeamController extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
-            'image' => 'required|image',
-            'logo' => 'required|image',
+            'image' => 'nullable|image',
+            'logo' => 'nullable|image',
         ]);
 
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME) . '.webp';
-            $destinationPath = public_path('uploads/team');
+        $imagePath = $request->hasFile('image') ? $this->handleWebpUpload($request->file('image')) : null;
+        $logoPath = $request->hasFile('logo') ? $this->handleWebpUpload($request->file('logo')) : null;
 
-            // Check if the directory exists, if not, create it
-            if (!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath, 0755, true);
-            }
-
-            // Convert and save the image as WebP
-            $img = Image::make($image)->encode('webp', 90); // 90 is the quality (0-100)
-            $img->save($destinationPath . '/' . $imageName);
-
-            $imagePath = 'uploads/team/' . $imageName;
-        }
-        $imagePath2 = null;
-        if ($request->hasFile('logo')) {
-            $image2 = $request->file('logo');
-            $imageName2 = time() . '_' . pathinfo($image2->getClientOriginalName(), PATHINFO_FILENAME) . '.webp';
-            $destinationPath2 = public_path('uploads/team');
-
-            // Check if the directory exists, if not, create it
-            if (!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath, 0755, true);
-            }
-
-            // Convert and save the image as WebP
-            $img = Image::make($image2)->encode('webp', 90); // 90 is the quality (0-100)
-            $img->save($destinationPath2 . '/' . $imageName2);
-
-            $imagePath2 = 'uploads/team/' . $imageName2;
-        }
         AdvisoryTeam::create([
             'name' => $request->name,
             'designation' => $request->designation,
             'image' => $imagePath,
-            'logo' => $imagePath2,
+            'logo' => $logoPath,
             'status' => $request->status ?? true,
         ]);
 
-        return redirect()->route('admin.advisory.index')->with('success', 'Company Logo created successfully.');
+        return redirect()->route('admin.advisory.index')->with('success', 'Advisory team member created successfully.');
+    }
+    private function handleWebpUpload($file)
+    {
+        $imageName = time() . '_' . pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '.webp';
+        $destinationPath = public_path('uploads/team');
+
+        if (!File::exists($destinationPath)) {
+            File::makeDirectory($destinationPath, 0755, true);
+        }
+
+        $img = Image::make($file)->encode('webp', 90);
+        $img->save($destinationPath . '/' . $imageName);
+
+        return 'uploads/team/' . $imageName;
     }
     /**
      * Display the specified resource.
@@ -138,14 +120,14 @@ class AdvisoryTeamController extends Controller
         if ($request->hasFile('logo')) {
             $logo = $request->file('logo');
             $logoName = time() . '_' . pathinfo($logo->getClientOriginalName(), PATHINFO_FILENAME) . '.webp';
-            $destinationPath = public_path('uploads/team');
+            $destinationPath2 = public_path('uploads/team');
 
-            if (!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath, 0755, true);
+            if (!File::exists($destinationPath2)) {
+                File::makeDirectory($destinationPath2, 0755, true);
             }
 
             $img = Image::make($logo)->encode('webp', 90);
-            $img->save($destinationPath . '/' . $logoName);
+            $img->save($destinationPath2 . '/' . $logoName);
 
             $logoPath = 'uploads/team/' . $logoName;
 

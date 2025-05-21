@@ -24,8 +24,8 @@
             </div>
         </section>
         <!-- <div class="help-bg">
-                    <div class="help-bg-item"></div>
-                  </div> -->
+                                                <div class="help-bg-item"></div>
+                                              </div> -->
         <section class="oour-service-about our-service-about-tow our-service cpb-0">
             <div class="container">
                 <div class="our-service-wrapper">
@@ -49,8 +49,8 @@
             </div>
         </section>
         <!-- <div class="help-bg">
-                    <div class="help-bg-item"></div>
-                  </div> -->
+                                                <div class="help-bg-item"></div>
+                                              </div> -->
         <section class="our-service-about our-service">
             <div class="container">
                 <div class="our-service-wrapper">
@@ -81,14 +81,14 @@
                                 measurable change.
                             </li>
                             <!-- <li>
-                                <b> Innovation </b> – Constant focus on developing creative
-                                and forward-thinking strategies.
-                              </li>
+                                                            <b> Innovation </b> – Constant focus on developing creative
+                                                            and forward-thinking strategies.
+                                                          </li>
 
-                              <li>
-                                <b> Impact </b>– A focus on delivering measurable, meaningful
-                                change in organizations and across sectors.
-                              </li> -->
+                                                          <li>
+                                                            <b> Impact </b>– A focus on delivering measurable, meaningful
+                                                            change in organizations and across sectors.
+                                                          </li> -->
                         </ul>
                     </div>
                 </div>
@@ -106,52 +106,23 @@
                 <h1>Our Leadership Team</h1>
             </div>
             <div class="team-card-items">
-                <div class="team-card-item">
-                    <div class="team-img">
-                        <img src="/assets/images/8.png" alt="" />
-                    </div>
-                    <div class="team-content">
-                        <div class="team-details">
-                            <a href="#" class="team-name">Amanda Hill-Attkisson</a>
-                            <h5 class="team-short-title">Aligned Global Network</h5>
-                            <h4>
-                                Founder, President Strategic Planning, Change Management,
-                                Pilot to Scale Innovation
-                            </h4>
+                @foreach ($leaderships as $leadership)
+                    <div class="team-card-item">
+                        <div class="team-img">
+                            <img src="{{ asset($leadership->image) }}" alt="" />
                         </div>
-                        <!-- <a href="#" class="team-website">miye@example.com</a> -->
-                    </div>
-                </div>
-                <div class="team-card-item">
-                    <div class="team-img">
-                        <img src="/assets/images/4.png" alt="" />
-                    </div>
-                    <div class="team-content">
-                        <div class="team-details">
-                            <a href="#" class="team-name">Jullanar Maalik-Naselli</a>
-                            <h5 class="team-short-title">Good People Alliance</h5>
-                            <h4>
-                                Educational Consultant in Organizational and Performance
-                                Enablement
-                            </h4>
+                        <div class="team-content">
+                            <div class="team-details">
+                                <a href="#" class="team-name">{{ $leadership->name }}</a>
+                                <h5 class="team-short-title">{{ $leadership->designation }}</h5>
+                                <h4>
+                                    {{ $leadership->short_description }}
+                                </h4>
+                            </div>
+                            <!-- <a href="#" class="team-website">miye@example.com</a> -->
                         </div>
-                        <!-- <a href="#" class="team-website">miye@example.com</a> -->
                     </div>
-                </div>
-
-                <div class="team-card-item">
-                    <div class="team-img">
-                        <img src="/assets/images/7.png" alt="" />
-                    </div>
-                    <div class="team-content">
-                        <div class="team-details">
-                            <a href="#" class="team-name">Sloane Scott</a>
-                            <h5 class="team-short-title">Sloane-co.com</h5>
-                            <h4>Chaos Pilot, Self-Pay Patient, Brand Architect</h4>
-                        </div>
-                        <!-- <a href="#" class="team-website">miye@example.com</a> -->
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

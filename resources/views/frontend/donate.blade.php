@@ -8,7 +8,7 @@
     <section class="donate">
         <div class="donate-wrapper">
             <div class="donate-left">
-                <img src="/assets/images/donate.png" alt="" />
+                <img src="{{ asset('assets/frontend/images/donate.png') }}" alt="" />
             </div>
             <div class="donate-right">
                 <p class="donate-text">
@@ -38,7 +38,7 @@
                                 <form action="">
                                     <div class="donate-form-step" data-step="1">
                                         <div class="donate-logo">
-                                            <img src="/assets/images/logo.png" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" />
                                         </div>
                                         <div class="donate-header-item">
                                             <button class="donate-btn active" type="button">
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="donate-form-step" data-step="2">
                                         <div class="donate-logo">
-                                            <img src="/assets/images/logo.png" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" />
                                         </div>
                                         <ul class="donate-card-item">
                                             <li class="donate-card-item-list">
@@ -132,7 +132,7 @@
                                         </div>
                                         <div class="card-info-wrapper">
                                             <h2 class="donate-info-title">Card information</h2>
-                                            <img src="/assets/images/card.png" alt="" />
+                                            <img src="{{ asset('assets/frontend/images/card.png') }}" alt="" />
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6">

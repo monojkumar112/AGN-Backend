@@ -13,9 +13,9 @@ return new class extends Migration {
         Schema::create('event_teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('designation');
-            $table->string('logo');
-            $table->string('image');
+            $table->text('designation')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('image')->nullable();
             $table->string('status')->default(true);
             $table->timestamps();
         });

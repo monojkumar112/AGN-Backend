@@ -75,13 +75,12 @@
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset class="form-group">
-                                                <label for="designation">Designation <span
-                                                        class="text-danger"><b>*</b></span>
+                                                <label for="designation">Designation
                                                 </label>
                                                 <input type="text"
                                                     class="form-control @error('designation') is-invalid @enderror"
                                                     value="{{ $event->designation ?? old('designation') }}" id="designation"
-                                                    name="designation" required>
+                                                    name="designation">
                                                 @error('designation')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

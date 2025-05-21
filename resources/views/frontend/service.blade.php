@@ -16,11 +16,11 @@
                         <h5>A Project-Based Approach</h5>
                     </div>
                     <!-- <a href="/service.html" class="custom-btn get-qucte-btn">
-                                <div class="get-arrow-icon">
-                                  <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <p>See All Services</p>
-                              </a> -->
+                                                                                                                <div class="get-arrow-icon">
+                                                                                                                  <i class="fas fa-arrow-up"></i>
+                                                                                                                </div>
+                                                                                                                <p>See All Services</p>
+                                                                                                              </a> -->
                 </div>
                 <div class="our-service-content">
                     <div class="row">
@@ -33,13 +33,13 @@
                                     outcomes.
                                 </p>
                                 <!-- <ul class="mt-2">
-                                      <li>
-                                        Research and strategy initiated by our internal team of
-                                        Impact Advisors
-                                      </li>
-                                      <li>Budget considerations and team requirements</li>
-                                      <li>Retain necessary resources for project development</li>
-                                    </ul> -->
+                                                                                                                      <li>
+                                                                                                                        Research and strategy initiated by our internal team of
+                                                                                                                        Impact Advisors
+                                                                                                                      </li>
+                                                                                                                      <li>Budget considerations and team requirements</li>
+                                                                                                                      <li>Retain necessary resources for project development</li>
+                                                                                                                    </ul> -->
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -53,13 +53,13 @@
                                     timelines, milestones, deliverables.
                                 </p>
                                 <!-- <ul class="mt-2">
-                                      <li>
-                                        Establish a clear timeline and assign team
-                                        responsibilities
-                                      </li>
-                                      <li>Set milestones and define key deliverables</li>
-                                      <li>Finalize proposal, contract, and legal agreements</li>
-                                    </ul> -->
+                                                                                                                      <li>
+                                                                                                                        Establish a clear timeline and assign team
+                                                                                                                        responsibilities
+                                                                                                                      </li>
+                                                                                                                      <li>Set milestones and define key deliverables</li>
+                                                                                                                      <li>Finalize proposal, contract, and legal agreements</li>
+                                                                                                                    </ul> -->
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -73,24 +73,24 @@
                                     goals.
                                 </p>
                                 <!-- <ul class="mt-2">
-                                      <li>
-                                        Deliverables are completed, reviewed, and signed off by
-                                        the client
-                                      </li>
-                                      <li>
-                                        Evaluation of the project begins as we move toward the
-                                        next phase or project!
-                                      </li>
-                                    </ul> -->
+                                                                                                                      <li>
+                                                                                                                        Deliverables are completed, reviewed, and signed off by
+                                                                                                                        the client
+                                                                                                                      </li>
+                                                                                                                      <li>
+                                                                                                                        Evaluation of the project begins as we move toward the
+                                                                                                                        next phase or project!
+                                                                                                                      </li>
+                                                                                                                    </ul> -->
                                 <!-- <a
-                                      href="/service.html"
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      class="service-link-btn"
-                                    >
-                                      <span>Explore Now</span>
-                                      <span> <i class="fas fa-arrow-up"></i> </span>
-                                    </a> -->
+                                                                                                                      href="/service.html"
+                                                                                                                      target="_blank"
+                                                                                                                      rel="noopener noreferrer"
+                                                                                                                      class="service-link-btn"
+                                                                                                                    >
+                                                                                                                      <span>Explore Now</span>
+                                                                                                                      <span> <i class="fas fa-arrow-up"></i> </span>
+                                                                                                                    </a> -->
                             </div>
                         </div>
                     </div>
@@ -98,129 +98,54 @@
             </div>
         </div>
     </section>
-    <div class="help-bg help-serve-bg">
-        <div class="help-bg-item"></div>
+    <div class="service-main-wrapper">
+        @foreach ($services as $service)
+            <div class="help-bg help-serve-bg">
+                <div class="help-bg-item"></div>
+            </div>
+            <section class="our-service">
+                <div class="container">
+                    <div class="our-service-wrapper">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="our-service-header mb-3">
+                                    <div class="our-service-left">
+                                        <h4>Our Services</h4>
+                                    </div>
+                                </div>
+                                <div class="our-service-item">
+                                    <a href="#" class="our-service-title" target="_blank" rel="noopener noreferrer">
+                                        {{ $service->name }}
+                                    </a>
+                                    <ul>
+                                        @foreach (json_decode($service->service) as $item)
+                                            <li>{{ $item }}</li>
+                                        @endforeach
+
+                                    </ul>
+                                </div>
+                                <a href="{{ route('advisor') }}#{{ $service->btn_slug }}"
+                                    class="custom-btn mt-3 get-qucte-btn">
+                                    <div class="get-arrow-icon">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <p>{{ $service->btn_text }}</p>
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="our-service-img-item">
+                                    <div class="service-img-add">
+                                        <img src="{{ asset($service->image) }}" alt="" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endforeach
     </div>
-    <section class="our-service">
-        <div class="container">
-            <div class="our-service-wrapper">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="our-service-header mb-3">
-                            <div class="our-service-left">
-                                <h4>Our Services</h4>
-                            </div>
-                        </div>
-                        <div class="our-service-item">
-                            <a href="#" class="our-service-title" target="_blank" rel="noopener noreferrer">
-                                ADVISORY SOLUTIONS
-                            </a>
-                            <ul>
-                                <li>Founder Exit Strategy & Business Effectiveness</li>
-                                <li>Nonprofit Strategy & Fundraising Consulting</li>
-                                <li>Policy Strategy & Advocacy Campaigns</li>
-                                <li>Executive Coaching & Leadership Training</li>
-                            </ul>
-                        </div>
-                        <a href="/strategic-advisor.html#advisor" class="custom-btn mt-3 get-qucte-btn">
-                            <div class="get-arrow-icon">
-                                <i class="fas fa-arrow-up"></i>
-                            </div>
-                            <p>Our Advisory Team</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="our-service-img-item">
-                            <div class="service-img-add">
-                                <img src="/assets/images/service-1.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="help-bg help-serve-bg">
-        <div class="help-bg-item"></div>
-    </div>
-    <section class="our-service">
-        <div class="container">
-            <div class="our-service-wrapper">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="our-service-item">
-                            <a href="#" class="our-service-title" target="_blank" rel="noopener noreferrer">
-                                TECHNOLOGY ENABLEMENT
-                            </a>
-                            <ul>
-                                <li>Pilot-to-Scale Program Innovation</li>
-                                <li>Monitoring, Evaluation and Research</li>
-                                <li>AI Technical Readiness (Team/Business)</li>
-                                <li>Technical Training (Beginner / Advanced )</li>
-                            </ul>
-                        </div>
-                        <a href="/strategic-advisor.html#technology" class="custom-btn mt-3 get-qucte-btn">
-                            <div class="get-arrow-icon">
-                                <i class="fas fa-arrow-up"></i>
-                            </div>
-                            <p>Our Tech Team</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="our-service-img-item">
-                            <div class="service-img-add">
-                                <img src="/assets/images/service-3.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="help-bg help-serve-bg">
-        <div class="help-bg-item"></div>
-    </div>
-
-    <section class="our-service">
-        <div class="container">
-            <div class="our-service-wrapper">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="our-service-item">
-                            <a href="#" class="our-service-title" target="_blank" rel="noopener noreferrer">
-                                EVENT SERVICES
-                            </a>
-                            <ul>
-                                <li>Event Design & Production</li>
-                                <li>Content Creation & Speaker Management</li>
-                                <li>Event Communications</li>
-                                <li>
-                                    Event Execution - Learning Workshops / Hack-a-thons /
-                                    Trainings
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="/strategic-advisor.html#events" class="custom-btn mt-3 get-qucte-btn">
-                            <div class="get-arrow-icon">
-                                <i class="fas fa-arrow-up"></i>
-                            </div>
-                            <p>Our Events Team</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="our-service-img-item">
-                            <div class="service-img-add">
-                                <img src="/assets/images/service-2.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="request-call">
         <div class="container">
             <div class="row align-items-center">
@@ -233,12 +158,14 @@
                             deliver solutions.
                         </p>
                         <div class="request-call-form">
-                            <form action="">
+                            <form action="{{ route('contact.store') }}" method="post">
+                                @csrf
+                                @method('post')
                                 <div class="input-fuild-item">
                                     <input type="text" placeholder="Name*" name="name" required />
                                 </div>
                                 <div class="input-fuild-item">
-                                    <input type="text" placeholder="Company Name" name="name" />
+                                    <input type="text" placeholder="Company Name" name="company" />
                                 </div>
                                 <div class="input-fuild-item">
                                     <input type="email" placeholder="Email*" name="email" />
@@ -251,12 +178,13 @@
                                     <textarea name="message" placeholder="Message*" id="" cols="30" rows=""></textarea>
                                 </div>
 
-                                <a class="custom-btn get-qucte-btn" href="mailto:amandah@alignedglobalnetwork.com">
+                                <button type="submit" class="custom-btn get-qucte-btn"
+                                    href="mailto:amandah@alignedglobalnetwork.com">
                                     <div class="get-arrow-icon">
                                         <i class="fas fa-arrow-up"></i>
                                     </div>
                                     <p>Submit Request</p>
-                                </a>
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -264,15 +192,13 @@
                 <div class="col-md-6">
                     <div class="request-call-item">
                         <div class="request-call-img">
-                            <img src="/assets/images/" alt="" />
-                            <img src="/assets/images/request-img.png" alt="" />
+                            <img src="{{ asset('assets/frontend/images/request-img.png') }}" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
 
 

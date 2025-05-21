@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('company_logos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('image');
             $table->string('status')->default(true);
             $table->timestamps();

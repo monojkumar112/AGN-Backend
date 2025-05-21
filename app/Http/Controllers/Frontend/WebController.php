@@ -7,32 +7,40 @@ use App\Models\ContactUs;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\AdvisoryTeam;
 use App\Models\Blog;
 use App\Models\Category;
-use App\Models\Course;
-use App\Models\Speaking;
-use App\Models\SpeakingLogoSlide;
-use App\Models\WatchNow;
-use JsonException;
-use Spatie\Newsletter\Newsletter;
+use App\Models\CompanyLogo;
+use App\Models\EventTeam;
+use App\Models\LeadershipTeam;
+use App\Models\Service;
+use App\Models\Slider;
+use App\Models\TechnologyTeam;
 
 class WebController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $sliders = Slider::all();
+        $companyLogos = CompanyLogo::all();
+        return view('frontend.index', compact('sliders', 'companyLogos'));
     }
     public function service()
     {
-        return view('frontend.service');
+        $services = Service::all();
+        return view('frontend.service', compact('services'));
     }
     public function advisor()
     {
-        return view('frontend.advisor');
+        $advisorys = AdvisoryTeam::all();
+        $technologys = TechnologyTeam::all();
+        $events = EventTeam::all();
+        return view('frontend.advisor', compact('technologys', 'events', 'advisorys'));
     }
     public function about()
     {
-        return view('frontend.about');
+        $leaderships = LeadershipTeam::all();
+        return view('frontend.about', compact('leaderships'));
     }
     public function donate()
     {

@@ -14,8 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->text('designation');
-            $table->string('logo');
-            $table->string('image');
+            $table->string('logo')->nullable();
+            $table->string('image')->nullable();
             $table->string('status')->default(true);
             $table->timestamps();
         });

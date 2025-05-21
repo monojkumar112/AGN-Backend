@@ -58,7 +58,7 @@
                             <div class="col-md-10">
                                 <div class="card-box">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        {{-- <div class="col-md-12">
                                             <fieldset class="form-group">
                                                 <label for="name">Name <span class="text-danger"><b>*</b></span>
                                                 </label>
@@ -72,7 +72,7 @@
                                                     </span>
                                                 @enderror
                                             </fieldset>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="image" class="form-label">Upload Company Logo </label>

@@ -164,10 +164,13 @@ ul.header-nav-lists {
     gap: 25px;
     color: var(--white-color);
 }
-.hero-content-3 {
+.hero-item-sidee:nth-child(3) .hero-item .hero-content {
+    position: absolute;
     left: 200px;
-    text-align: start;
+    text-align: left;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
 }
 
@@ -419,6 +422,13 @@ section.our-promote {
     justify-content: center;
     position: relative;
 }
+.service-main-wrapper .our-service:nth-child(4) .our-service-header {
+    display: none;
+}
+.service-main-wrapper .our-service:nth-child(6) .our-service-header {
+    display: none;
+}
+
 .get-all-qucte-btn {
     position: absolute;
     right: 0;

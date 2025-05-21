@@ -7,86 +7,27 @@
     <section class="hero">
         <div class="swiper hero-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-item">
-                        <div class="hero-content">
-                            <h1 class="hero-title">Aligned Global Network</h1>
-                            <p>
-                                Leverage the power of the collective to unlock bold,
-                                actionable solutions for your organization.
-                            </p>
-                            <a href="/service.html" class="custom-btn get-qucte-btn">
-                                <div class="get-arrow-icon">
-                                    <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <p>Learn More</p>
-                            </a>
-                        </div>
-                        <div class="silder-img">
-                            <img src="{{ asset('assets/frontend/images/silder-1.png') }}" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-item">
-                        <div class="hero-content">
-                            <h1 class="hero-title">Excellence</h1>
-                            <p>
-                                A dedication to the highest standards of quality in both
-                                strategy and execution.
-                            </p>
-                            <a href="/service.html" class="custom-btn get-qucte-btn">
-                                <div class="get-arrow-icon">
-                                    <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <p>Learn More</p>
-                            </a>
-                        </div>
-                        <div class="silder-img silder-img-excell">
-                            <img src="{{ asset('assets/frontend/images/silder-2.png') }}" alt="" />
+                @foreach ($sliders as $slider)
+                    <div class="swiper-slide hero-item-sidee">
+                        <div class="hero-item">
+                            <div class="hero-content">
+                                <h1 class="hero-title">{{ $slider->name }} </h1>
+                                <p>
+                                    {{ $slider->description }}
+                                </p>
+                                <a href="/service.html" class="custom-btn get-qucte-btn">
+                                    <div class="get-arrow-icon">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <p>{{ $slider->btn_text }}</p>
+                                </a>
+                            </div>
+                            <div class="silder-img">
+                                <img src="{{ asset($slider->image) }}" alt="" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-item">
-                        <div class="hero-content hero-content-3">
-                            <h1 class="hero-title">Expertise & Innovation</h1>
-                            <p>
-                                Deep knowledge and forward-thinking strategies fuel creative,
-                                high-impact solutions tailored for long-term success.
-                            </p>
-                            <a href="/service.html" class="custom-btn get-qucte-btn">
-                                <div class="get-arrow-icon">
-                                    <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <p>Learn More</p>
-                            </a>
-                        </div>
-                        <div class="silder-img">
-                            <img src="{{ asset('assets/frontend/images/silder-3.png') }}" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="hero-item">
-                        <div class="hero-content">
-                            <h1 class="hero-title">Collaboration & Impact</h1>
-                            <p>
-                                Close partnerships to craft result-driven strategies that
-                                create lasting, meaningful, measurable change.
-                            </p>
-                            <a href="/service.html" class="custom-btn get-qucte-btn">
-                                <div class="get-arrow-icon">
-                                    <i class="fas fa-arrow-up"></i>
-                                </div>
-                                <p>Learn More</p>
-                            </a>
-                        </div>
-                        <div class="silder-img">
-                            <img src="{{ asset('assets/frontend/images/silder-4.png') }}" alt="" />
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- Pagination -->
             <div class="swiper-pagination"></div>
@@ -108,7 +49,7 @@
                         <!-- <p>/ who we are /</p> -->
                         <h2>
                             <!-- Aligned Global Network is a leading global business strategy
-                                                              consultancy -->
+                                                                                                              consultancy -->
                             Facing tough challenges? <br />
                             Get expert advisors and problem solvers by your side.
                         </h2>
@@ -165,29 +106,29 @@
                                     </div>
                                 </div>
                                 <!-- <div class="col-lg-6 col-md-6">
-                                                                  <div class="who-are-item">
-                                                                    <h4>Leadership Trainning</h4>
-                                                                    <p>
-                                                                      Get highlighted by the company that you’ve been worked.
-                                                                    </p>
-                                                                  </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6">
-                                                                  <div class="who-are-item">
-                                                                    <h4>Fast On Demand Service</h4>
-                                                                    <p>
-                                                                      Get highlighted by the company that you’ve been worked.
-                                                                    </p>
-                                                                  </div>
-                                                                </div> -->
+                                                                                                                  <div class="who-are-item">
+                                                                                                                    <h4>Leadership Trainning</h4>
+                                                                                                                    <p>
+                                                                                                                      Get highlighted by the company that you’ve been worked.
+                                                                                                                    </p>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                                <div class="col-lg-6 col-md-6">
+                                                                                                                  <div class="who-are-item">
+                                                                                                                    <h4>Fast On Demand Service</h4>
+                                                                                                                    <p>
+                                                                                                                      Get highlighted by the company that you’ve been worked.
+                                                                                                                    </p>
+                                                                                                                  </div>
+                                                                                                                </div> -->
                             </div>
                         </div>
                         <!-- <a href="#" class="custom-btn get-qucte-btn">
-                                                              <div class="get-arrow-icon">
-                                                                <i class="fas fa-arrow-up"></i>
-                                                              </div>
-                                                              <p>Get A Quote</p>
-                                                            </a> -->
+                                                                                                              <div class="get-arrow-icon">
+                                                                                                                <i class="fas fa-arrow-up"></i>
+                                                                                                              </div>
+                                                                                                              <p>Get A Quote</p>
+                                                                                                            </a> -->
                     </div>
                 </div>
             </div>
@@ -200,103 +141,18 @@
             <div class="company-wrapper">
                 <div class="swiper mySwiperCompany">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/8.png') }}" alt="" />
+                        @foreach ($companyLogos as $companyLogo)
+                            <div class="swiper-slide">
+                                <div class="company-logo-item">
+                                    <img src="{{ asset($companyLogo->image) }}" alt="" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/1.png') }}" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/gpallc_logo.png') }}"
-                                    alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/9.png') }}" alt="" />
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/10.png') }}" alt="" />
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/11.png') }}" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/4.png') }}" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/5.png') }}" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/6.png') }}" alt="" />
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="company-logo-item">
-                                <img src="{{ asset('assets/frontend/images/company-logo/7.png') }}" alt="" />
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============= Count Down Section ============= -->
-    <!-- <section class="count-down">
-                                                    <div class="container">
-                                                      <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-6">
-                                                          <div class="count-down-item">
-                                                            <h2 class="count" data-target="834.0M">0.0M</h2>
-                                                            <p>Years of Experience</p>
-                                                          </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-6">
-                                                          <div class="count-down-item">
-                                                            <h2 class="count" data-target="732.0M">0.0M</h2>
-                                                            <p>Constituents Served</p>
-                                                          </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-6">
-                                                          <div class="count-down-item">
-                                                            <h2 class="count" data-target="90.0M">0.0M</h2>
-                                                            <p>Project $ Saved</p>
-                                                          </div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-3 col-6">
-                                                          <div class="count-down-item">
-                                                            <h2 class="count" data-target="236.0M">0.0M</h2>
-                                                            <p>Project Complete</p>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </section> -->
-
-    <!-- ============= Count Down Section End ============= -->
-
     <!-- ============= Our Promote Section ============= -->
     <section class="our-promote">
         <div class="our-promote-bg">
@@ -412,10 +268,10 @@
                             </div>
                         </div>
                         <!-- <div class="col-md-3">
-                                                              <div class="our-service-item">
-                                                                <p>We have the ability to execute globally.</p>
-                                                              </div>
-                                                            </div> -->
+                                                                                                              <div class="our-service-item">
+                                                                                                                <p>We have the ability to execute globally.</p>
+                                                                                                              </div>
+                                                                                                            </div> -->
                     </div>
                     <h5 class="text-center service-text">We rise by lifting others.</h5>
                 </div>

@@ -7,7 +7,7 @@
                      <div class="footer-left">
                          <div class="foot-logo-wrapper">
                              <div class="footer-img">
-                                 <a href="/">
+                                 <a href="{{ route(name: 'index') }}">
                                      <img src="/assets/images/footer-logo.png" alt="" />
                                  </a>
                              </div>
@@ -42,25 +42,25 @@
                          <div class="footer-menu-item">
                              <ul>
                                  <li>
-                                     <a href="/strategic-advisor.html" class="mobile-fotter">Our Experts</a>
+                                     <a href="{{ route('advisor') }}" class="mobile-fotter">Our Experts</a>
                                  </li>
                                  <li>
                                      <span>Our</span>
-                                     <a href="/service.html" class="mobile-fotter">Services</a>
+                                     <a href="{{ route('service') }}" class="mobile-fotter">Services</a>
                                  </li>
                                  <li>
-                                     <a href="/about.html" class="mobile-fotter">About Us</a>
+                                     <a href="{{ route('about') }}"class="mobile-fotter">About Us</a>
                                  </li>
                              </ul>
                          </div>
                          <div class="footer-menu-item">
                              <ul>
                                  <li>
-                                     <a href="/strategic-advisor.html#events">Event </a>
+                                     <a href="{{ route('advisor') }}#event">Event </a>
                                      <span>Support</span>
                                  </li>
                                  <li><a href="/#contact">Help & Support </a></li>
-                                 <li><a href="/donate.html">Donate</a></li>
+                                 <li><a href="{{ route('donate') }}">Donate</a></li>
                              </ul>
                          </div>
                      </div>

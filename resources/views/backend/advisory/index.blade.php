@@ -66,7 +66,7 @@
                                         <td>{{ $key + 1 }}</td>
 
                                         <td>{{ Str::words($advisory->name, 20, '[..]') }}</td>
-                                        <td>{{ Str::words($advisory->designation, 30, '[..]') }}</td>
+                                        <td>{{ \Str::words($advisory->designation, 20, '[..]') }}</td>
                                         <td>
                                             <img src="{{ $advisory->logo != null ? asset($advisory->logo) : asset('assets/application-default/img/gallery.jpg') }}"
                                                 alt="" style="width: 80px;">

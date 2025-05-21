@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset class="form-group">
-                                                <label for="designation">Designation <span
+                                                <label for="designation">Company Name <span
                                                         class="text-danger"><b>*</b></span>
                                                 </label>
                                                 <input type="text"
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <fieldset class="form-group">
-                                                <label for="short_description">Short Description <span
+                                                <label for="short_description">Designation <span
                                                         class="text-danger"><b>*</b></span>
                                                 </label>
                                                 <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description"
